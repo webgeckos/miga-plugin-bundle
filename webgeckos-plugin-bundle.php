@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name:  WebGeckos Plugin Bundle
+Plugin Name:  Miga Plugin Bundle
 Plugin URI:   http://webgeckos.com
 Description:  Theme specific plugins selection for WebGeckos WordPress Themes
 Version:      1.0.0
 Author:       Danijel Rose
 Author URI:   http://webgeckos.com
-Text Domain:  wgpb
+Text Domain:  miga
 License:      GPL-2.0+
 License URI:  http://www.gnu.org/licenses/gpl-2.0.txt
 */
@@ -30,9 +30,9 @@ if ( ! defined('ABSPATH') ) {
 
 // Enqueue scripts for countdown timecircles
 function scripts_for_countdownclock() {
-    wp_register_style('timecirclecss', plugins_url() . '/webgeckos-plugin-bundle/css/TimeCircles.css');
-    wp_register_script('timecirclejquery', plugins_url() . '/webgeckos-plugin-bundle/js/TimeCircles.js', array('jquery'), '', true);
-    wp_register_script('timecirclescript', plugins_url() . '/webgeckos-plugin-bundle/js/timecirclescript.js', array('timecirclejquery'), '', true);
+    wp_register_style('timecirclecss', plugins_url() . '/miga-plugin-bundle/css/TimeCircles.css');
+    wp_register_script('timecirclejquery', plugins_url() . '/miga-plugin-bundle/js/TimeCircles.js', array('jquery'), '', true);
+    wp_register_script('timecirclescript', plugins_url() . '/miga-plugin-bundle/js/timecirclescript.js', array('timecirclejquery'), '', true);
 }
 
 /* 2. ACTION HOOKS */
@@ -41,26 +41,26 @@ function scripts_for_countdownclock() {
 add_action('wp_enqueue_scripts', 'scripts_for_countdownclock');
 
 // hook for registering the shortcodes
-add_action('init', 'wgpb_register_shortcodes');
+add_action('init', 'miga_register_shortcodes');
 
 // hook for registering custom post types and taxonomies
-add_action( 'init', 'wgpb_init' );
+add_action( 'init', 'miga_init' );
 
 // hook for setting default term for taxonomy display-locations
-add_action( 'save_post', 'wgpb_set_default_object_terms', 100, 2 );
+add_action( 'save_post', 'miga_set_default_object_terms', 100, 2 );
 
 /* 3. FILTER HOOKS */
 
 /* 4. SHORTCODES */
 
 // register shortcodes
-function wgpb_register_shortcodes() {
-	add_shortcode('time-circle', 'wgpb_countdown_shortcode');
-  add_shortcode('wgpb_btn', 'wgpb_button_shortcode');
+function miga_register_shortcodes() {
+	add_shortcode('time-circle', 'miga_countdown_shortcode');
+  add_shortcode('miga_btn', 'miga_button_shortcode');
 }
 
 // adding shortcode for countdown timecircles
-function wgpb_countdown_shortcode($atts, $content = null){
+function miga_countdown_shortcode($atts, $content = null){
     $timecircledata = shortcode_atts(array(
         'data_date' => '0',
         'data_timer' => '0',
@@ -88,7 +88,7 @@ function wgpb_countdown_shortcode($atts, $content = null){
 }
 
 // adding shortcode for custom button -> doesn't work with excerpt -> use the_content!!!
-function wgpb_button_shortcode($atts) {
+function miga_button_shortcode($atts) {
     extract(shortcode_atts(array(
         'text' => 'more',
         'url' => 'http://yourdomain.com',
@@ -101,9 +101,9 @@ function wgpb_button_shortcode($atts) {
 
 /* 5. CUSTOM POST TYPES */
 
-if ( ! function_exists( 'wgpb_init' ) ) :
+if ( ! function_exists( 'miga_init' ) ) :
 
-  function wgpb_init() {
+  function miga_init() {
 
   /*
   * Register custom post types
@@ -111,8 +111,8 @@ if ( ! function_exists( 'wgpb_init' ) ) :
 
   register_post_type('sections', array(
       'labels'        => array(
-              'name' => __( 'Sections', 'wgpb' ),
-              'singular_name' => __( 'Section', 'wgpb' )
+              'name' => __( 'Sections', 'miga' ),
+              'singular_name' => __( 'Section', 'miga' )
           ),
       'public'        => true,
       'supports'      => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
@@ -124,8 +124,8 @@ if ( ! function_exists( 'wgpb_init' ) ) :
 
   register_post_type('portfolio', array(
       'labels'        => array(
-              'name' => __( 'Portfolio', 'wgpb' ),
-              'singular_name' => __( 'Portfolio', 'wgpb' )
+              'name' => __( 'Portfolio', 'miga' ),
+              'singular_name' => __( 'Portfolio', 'miga' )
           ),
       'public'        => true,
       'supports'      => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
@@ -137,8 +137,8 @@ if ( ! function_exists( 'wgpb_init' ) ) :
 
   register_post_type('testimonials', array(
       'labels'        => array(
-              'name' => __( 'Testimonials', 'wgpb' ),
-              'singular_name' => __( 'Testimonial', 'wgpb' )
+              'name' => __( 'Testimonials', 'miga' ),
+              'singular_name' => __( 'Testimonial', 'miga' )
           ),
       'public'        => true,
       'supports'      => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
@@ -149,8 +149,8 @@ if ( ! function_exists( 'wgpb_init' ) ) :
 
   register_post_type('pricing-tables', array(
       'labels'        => array(
-              'name' => __( 'Pricing Tables', 'wgpb' ),
-              'singular_name' => __( 'Pricing Table', 'wgpb' )
+              'name' => __( 'Pricing Tables', 'miga' ),
+              'singular_name' => __( 'Pricing Table', 'miga' )
           ),
       'public'        => true,
       'supports'      => array( 'title', 'editor' ),
@@ -172,11 +172,11 @@ if ( ! function_exists( 'wgpb_init' ) ) :
   register_taxonomy('display-locations', 'sections', array(
       'labels' =>
           array(
-              'name' => __( 'Display Locations', 'wgpb' ),
-              'singular_name' => __( 'Display Location', 'wgpb' ),
-              'add_new_item' => __( 'Add New Display Location', 'wgpb' ),
-              'edit_item' => __( 'Edit Display Location', 'wgpb' ),
-      'update_item' => __( 'Update Display Location', 'wgpb' )
+              'name' => __( 'Display Locations', 'miga' ),
+              'singular_name' => __( 'Display Location', 'miga' ),
+              'add_new_item' => __( 'Add New Display Location', 'miga' ),
+              'edit_item' => __( 'Edit Display Location', 'miga' ),
+      'update_item' => __( 'Update Display Location', 'miga' )
           ),
       'hierarchical' => true,
       'show_admin_column' => true
@@ -185,11 +185,11 @@ if ( ! function_exists( 'wgpb_init' ) ) :
   register_taxonomy('portfolio-categories', 'portfolio', array(
       'labels' =>
           array(
-              'name' => __( 'Portfolio Categories', 'wgpb' ),
-              'singular_name' => __( 'Portfolio Category', 'wgpb' ),
-              'add_new_item' => __( 'Add New Portfolio Category', 'wgpb' ),
-              'edit_item' => __( 'Edit Portfolio Category', 'wgpb' ),
-              'update_item' => __( 'Update Portfolio Category', 'wgpb' )
+              'name' => __( 'Portfolio Categories', 'miga' ),
+              'singular_name' => __( 'Portfolio Category', 'miga' ),
+              'add_new_item' => __( 'Add New Portfolio Category', 'miga' ),
+              'edit_item' => __( 'Edit Portfolio Category', 'miga' ),
+              'update_item' => __( 'Update Portfolio Category', 'miga' )
           ),
       'hierarchical' => true,
       'show_admin_column' => true
@@ -211,7 +211,7 @@ endif;
  *
  * @license   GPLv2
  */
-function wgpb_set_default_object_terms( $post_id, $post ) {
+function miga_set_default_object_terms( $post_id, $post ) {
     if ( $post->post_type === 'sections' ) {
         $defaults = array(
             'display-locations' => array( 'home' ), // more default display locations can be defined here
