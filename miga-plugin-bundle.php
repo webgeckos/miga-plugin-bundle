@@ -26,6 +26,12 @@ if ( ! defined('ABSPATH') ) {
   exit;
 }
 
+// Make plugin ready for translations
+add_action('plugins_loaded', 'miga_load_textdomain');
+function miga_load_textdomain() {
+	load_plugin_textdomain( 'miga', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
+}
+
 /* 1. ENQUEUE SCRIPTS */
 
 // Enqueue scripts for countdown timecircles
