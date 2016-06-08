@@ -1,0 +1,93 @@
+# Copyright (C) 2015 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Miga 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2016-06-08 22:39+0200\n"
+"PO-Revision-Date: 2016-06-08 22:39+0200\n"
+"Last-Translator: Danijel Rose\n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-KeywordsList: __;esc_html__;_n_noop:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: miga-plugin-bundle.php:114
+msgid "Sections"
+msgstr "Sektionen"
+
+#: miga-plugin-bundle.php:115
+msgid "Section"
+msgstr "Sektion"
+
+#: miga-plugin-bundle.php:127 miga-plugin-bundle.php:128
+msgid "Portfolio"
+msgstr "Portfolio"
+
+#: miga-plugin-bundle.php:140
+msgid "Testimonials"
+msgstr "Bewertungen"
+
+#: miga-plugin-bundle.php:141
+msgid "Testimonial"
+msgstr "Bewertung"
+
+#: miga-plugin-bundle.php:152
+msgid "Pricing Tables"
+msgstr "Preistabellen"
+
+#: miga-plugin-bundle.php:153
+msgid "Pricing Table"
+msgstr "Preistabelle"
+
+#: miga-plugin-bundle.php:175
+msgid "Display Locations"
+msgstr "Display Orte"
+
+#: miga-plugin-bundle.php:176
+msgid "Display Location"
+msgstr "Display Ort"
+
+#: miga-plugin-bundle.php:177
+msgid "Add New Display Location"
+msgstr "Neuen Display Ort hinzufügen"
+
+#: miga-plugin-bundle.php:178
+msgid "Edit Display Location"
+msgstr "Display Ort bearbeiten"
+
+#: miga-plugin-bundle.php:179
+msgid "Update Display Location"
+msgstr "Update Display Ort"
+
+#: miga-plugin-bundle.php:188
+msgid "Portfolio Categories"
+msgstr "Portfolio Kategorien"
+
+#: miga-plugin-bundle.php:189
+msgid "Portfolio Category"
+msgstr "Portfolio Kategorie "
+
+#: miga-plugin-bundle.php:190
+msgid "Add New Portfolio Category"
+msgstr "Portfolio Kategorie hinzufügen"
+
+#: miga-plugin-bundle.php:191
+msgid "Edit Portfolio Category"
+msgstr "Portfolio Kategorie bearbeiten"
+
+#: miga-plugin-bundle.php:192
+msgid "Update Portfolio Category"
+msgstr "Update Portfolio Kategorie"
+
+#~ msgid "This theme recommends the following plugins: %1$s."
+#~ msgstr "Für dieses Theme werden die folgenden Plugins empfohlen: %1$s."
+
+#~ msgid "Begin installing plugins"
+#~ msgstr "Plugins jetzt installieren"
